@@ -25,10 +25,17 @@ gem "slim-rails"
 gem "uglifier", ">= 1.3.0"
 
 group :development do
+  gem "letter_opener"
   gem "web-console", ">= 3.3.0"
 end
 
 group :development, :test do
+  gem "awesome_print"
+  gem "dotenv-rails"
+  gem "factory_girl_rails"
+  gem "ffaker"
   gem "pry-rails"
+  gem "rspec-rails", "~> 3.5"
+  gem "rubocop", require: false
 end
 
