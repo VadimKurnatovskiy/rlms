@@ -8,7 +8,6 @@ gem "rails", "~> 5.1.2"
 # core
 gem "foreman"
 gem "pg", "~> 0.18"
-gem "puma", "~> 3.7"
 
 # auth
 gem "devise"
