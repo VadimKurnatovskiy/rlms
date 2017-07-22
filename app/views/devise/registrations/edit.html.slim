@@ -1,0 +1,35 @@
+.row
+  .col-md-6
+    .well
+      h3 Account settings
+
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        p Currently waiting confirmation for: #{resource.unconfirmed_email}
+
+      = simple_form_for resource,
+          as: resource_name,
+          url: registration_path(resource_name),
+          html: { method: :put } do |f|
+
+        .form-inputs
+          = f.input :first_name, required: true
+          = f.input :last_name, required: true
+          = f.input :email, required: true
+          = f.input :current_password, autocomplete: "off", required: true
+          = f.input :password, autocomplete: "off", required: false
+          = f.input :password_confirmation, required: false
+
+        .form-actions
+          = f.button :submit, "Update"
+  .col-md-6
+    .well
+      h3 Delete account
+      p You can completely delete your account with all blogs, stories and other data.
+      p
+        strong This action can not be reverted!
+      = link_to "I want to remove my account with all data!",
+            registration_path(resource_name),
+            class: "btn btn-danger",
+            data: { confirm: "Are you sure? This will remove your account with all data!" },
+            method: :delete
+

@@ -1,0 +1,18 @@
+.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a class="navbar-brand" href="/"
+        = content_for?(:title) ? yield(:title) : "RLMS"
+
+    .collapse.navbar-collapse#bs-example-navbar-collapse-1
+      .nav.navbar-nav
+        - if teacher_signed_in?
+          = active_link_to "Teacher's Dashboard", root_path, active: :exclusive, wrap_tag: :li
+      - if teacher_signed_in?
+        = render "navigation_teacher"
+

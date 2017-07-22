@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+set -e
+
+# Update bundle
+bundle install --path=.bundle
+
+# Update database schema
+bin/rails db:migrate
+
+# Clean log files and tmp directory
+bin/rails log:clear tmp:clear
