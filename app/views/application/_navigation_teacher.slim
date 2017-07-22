@@ -1,7 +1,7 @@
 ul.nav.navbar-nav.navbar-right
   li.dropdown
     a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"
-      = "My account "
+      = "#{current_teacher.full_name} "
       span.caret
     ul.dropdown-menu role="menu"
       li = link_to "Settings", edit_teacher_registration_path
