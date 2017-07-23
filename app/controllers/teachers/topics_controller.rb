@@ -7,6 +7,8 @@ module Teachers
     expose :course
     expose :topic
 
+    def show; end
+
     def create
       topic.course = course
       topic.save

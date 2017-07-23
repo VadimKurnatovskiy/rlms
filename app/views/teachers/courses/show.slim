@@ -18,9 +18,4 @@
 
     = render course.topics
 
-    .well
-      h4 Добавить тему
-      = simple_form_for [:teachers, course, course.topics.new] do |f|
-        = f.input :title, required: true, autofocus: true
-
-        .text-center = f.submit class: "btn btn-default btn-sm"
+    .well = render "teachers/topics/form"
