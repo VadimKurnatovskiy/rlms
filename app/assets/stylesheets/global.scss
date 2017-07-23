@@ -9,3 +9,8 @@ body {
 .alert-alert {
   @extend .alert-warning;
 }
+
+.well {
+  margin-bottom: 10px;
+  padding: 7px;
+}
