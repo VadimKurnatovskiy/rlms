@@ -24,6 +24,14 @@ module Teachers
       respond_with course
     end
 
+    def edit; end
+
+    def update
+      course.update(course_params)
+
+      respond_with :teachers, course
+    end
+
     private
 
     def course_params

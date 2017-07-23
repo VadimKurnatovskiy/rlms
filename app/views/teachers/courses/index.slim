@@ -3,7 +3,11 @@
     h3 My Courses
     hr
 
-    = render courses
+    h4 Published
+    = render courses.published
+    hr
 
+    h4 Not published
+    = render courses.not_published
     hr
     .text-center = link_to "Create new course", new_teachers_course_path, class: "btn btn-primary btn-lg"
