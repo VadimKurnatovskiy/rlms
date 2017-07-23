@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   namespace :teachers do
     resource :dashboard, only: :show
-    resources :courses
+    resources :courses do
+      resources :topics, shallow: true, only: %i[create edit update destroy]
+    end
   end
 
   authenticated :teacher do

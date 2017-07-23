@@ -12,3 +12,15 @@
           strong Курс не опубликован и виден только Вам.
     .pull-right
       = link_to "Edit course", edit_teachers_course_path(course), class: "btn btn-default btn-sm"
+    .clearfix
+    hr
+    h4 Темы курса:
+
+    = render course.topics
+
+    .well
+      h4 Добавить тему
+      = simple_form_for [:teachers, course, course.topics.new] do |f|
+        = f.input :title, required: true, autofocus: true
+
+        = f.submit class: "btn btn-default btn-sm"
