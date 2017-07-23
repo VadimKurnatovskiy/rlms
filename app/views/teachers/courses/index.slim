@@ -1,0 +1,9 @@
+.row
+  .col-md-8.col-md-offset-2
+    h3 My Courses
+    hr
+
+    = render courses
+
+    hr
+    .text-center = link_to "Create new course", new_teachers_course_path, class: "btn btn-primary btn-lg"

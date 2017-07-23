@@ -12,6 +12,8 @@ class Teacher < ApplicationRecord
 
   validates :first_name, :last_name, presence: true
 
+  has_many :courses, dependent: :destroy
+
   def full_name
     "#{first_name} #{last_name}"
   end

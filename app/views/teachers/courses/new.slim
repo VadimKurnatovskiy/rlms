@@ -1,0 +1,9 @@
+.row
+  .col-md-8.col-md-offset-2
+    h3 Create new course
+    hr
+    = simple_form_for [:teachers, course] do |f|
+      = f.input :title, autofocus: true, required: true
+      = f.input :description, required: true
+      = f.input :published
+      = f.submit class: "btn btn-default btn-lg"

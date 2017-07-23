@@ -6,6 +6,7 @@ ruby "2.3.4"
 gem "rails", "~> 5.1.2"
 
 # core
+gem "decent_exposure"
 gem "foreman"
 gem "pg", "~> 0.18"
 
