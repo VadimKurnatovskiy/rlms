@@ -1,13 +1,14 @@
 .row
   .col-md-8.col-md-offset-2
     h3 = course.title
-    hr
     p = course.description
-    p
-      - if course.published
-        strong Курс опубликован и виден учащимся.
-      - else
-        strong Курс не опубликован и виден только Вам.
+
     hr
+    .pull-left
+      p
+        - if course.published
+          strong Курс опубликован и виден учащимся.
+        - else
+          strong Курс не опубликован и виден только Вам.
     .pull-right
-      = link_to "Edit course", edit_teachers_course_path(course), class: "btn btn-default"
+      = link_to "Edit course", edit_teachers_course_path(course), class: "btn btn-default btn-sm"
