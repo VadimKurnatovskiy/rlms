@@ -15,7 +15,17 @@
     .clearfix
     hr
     h4 Темы курса:
+    p
+      strong Перетащите темы для изменения порядка
 
-    = render course.topics
+    ul.course-topics-list
+      = render course.topics
 
-    .well = render "teachers/topics/form", topic: course.topics.new
+    .well
+      = simple_form_for [:teachers, course, course.topics.new] do |f|
+        = f.input :title, required: true, autofocus: true
+
+        .text-center = f.submit class: "btn btn-default btn-sm"
+
+javascript:
+  $(function() { $(".course-topics-list").sortable(); });

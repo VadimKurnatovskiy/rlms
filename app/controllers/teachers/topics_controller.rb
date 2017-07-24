@@ -18,6 +18,12 @@ module Teachers
 
     def edit; end
 
+    def update
+      topic.update(topic_params)
+
+      respond_with :teachers, topic.course
+    end
+
     def destroy
       topic.destroy
 
