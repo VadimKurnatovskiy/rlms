@@ -1,2 +1,1 @@
 web: bundle exec rails server -p $PORT -e $RACK_ENV
-fe: bin/webpack-dev-server
