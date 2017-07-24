@@ -1,2 +1,7 @@
 .well
-  h4 = link_to topic.title, teachers_topic_path(topic)
+  .pull-left
+    h4 = link_to topic.title, teachers_topic_path(topic)
+  .pull-right
+    => link_to "Edit", edit_teachers_topic_path(topic), class: "btn btn-default btn-sm"
+    = link_to "Delete", teachers_topic_path(topic), class: "btn btn-default btn-sm", method: :delete
+  .clearfix

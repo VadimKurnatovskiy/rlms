@@ -16,6 +16,14 @@ module Teachers
       respond_with :teachers, course
     end
 
+    def edit; end
+
+    def destroy
+      topic.destroy
+
+      respond_with :teachers, topic.course
+    end
+
     private
 
     def topic_params
