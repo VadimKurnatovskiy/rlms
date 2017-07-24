@@ -5,6 +5,9 @@ set -e
 # Update bundle
 bundle install --path=.bundle
 
+# Install packages via yarn
+yarn install
+
 # Update database schema
 bin/rails db:migrate
 
