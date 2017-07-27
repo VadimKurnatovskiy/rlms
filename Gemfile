@@ -9,6 +9,7 @@ gem "rails", "~> 5.1.2"
 gem "decent_exposure"
 gem "foreman"
 gem "pg", "~> 0.18"
+gem "webpacker"
 
 # auth
 gem "devise"
