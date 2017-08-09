@@ -18,9 +18,10 @@
     p
       strong Перетащите темы для изменения порядка
 
-    #course-topics data-course-topics=course.topics.to_json
+    #courseTopicsContainer data-course-topics=course.topics.to_json
 
     .well
+      strong Добавить тему
       = simple_form_for [:teachers, course, course.topics.new] do |f|
         = f.input :title, required: true, autofocus: true
 

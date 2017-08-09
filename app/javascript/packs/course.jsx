@@ -1,33 +1,11 @@
 /* eslint no-console:0 */
 import React from "react"
 import ReactDOM from "react-dom";
+import CourseTopics from "./components/CourseTopics";
 
-class CourseTopics extends React.Component {
-  render() {
-    let topics = [];
-    let a = "";
-
-    for (a in ["1", "2"]) {
-      topics.push(<CourseTopic n={a} />)
-    }
-
-    return (
-      <h1>{ topics }</h1>
-    );
-  }
-}
-
-class CourseTopic extends React.Component {
-  render() {
-    return (
-      <div className="well">
-        I'm Topic number {this.props.n}
-      </div>
-    )
-  }
-}
+let container = document.getElementById("courseTopicsContainer");
+let topics = container.getAttribute("data-course-topics");
 
 ReactDOM.render(
-  <CourseTopics />,
-  document.getElementById("course-topics")
+  <CourseTopics topics={ JSON.parse(topics) } />, container
 );

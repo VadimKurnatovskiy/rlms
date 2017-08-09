@@ -5,6 +5,9 @@ set -e
 # Update bundle
 bundle install --path=.bundle
 
+# Update javascript packages
+yarn install
+
 # Update database schema
 bin/rails db:migrate
 
