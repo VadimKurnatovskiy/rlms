@@ -1,11 +1,11 @@
 /* eslint no-console:0 */
 import React from "react"
 import ReactDOM from "react-dom";
-import CourseTopics from "./components/CourseTopics";
+import SortableTopicsComponent from "./components/SortableTopicsComponent";
 
-let container = document.getElementById("courseTopicsContainer");
-let topics = container.getAttribute("data-course-topics");
+let topicsContainer = document.getElementById("courseTopicsContainer")
+let topics = JSON.parse(topicsContainer.getAttribute("data-course-topics"))
 
 ReactDOM.render(
-  <CourseTopics topics={ JSON.parse(topics) } />, container
+  <SortableTopicsComponent topics={topics} />, topicsContainer
 );

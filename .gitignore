@@ -11,3 +11,4 @@ config/database.yml
 .env
 /public/packs
 /node_modules
+yarn-error.log
