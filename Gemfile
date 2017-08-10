@@ -10,6 +10,7 @@ gem "decent_exposure"
 gem "foreman"
 gem "pg", "~> 0.18"
 gem "webpacker"
+gem "interactor", "~> 3.0"
 
 # auth
 gem "devise"
@@ -34,7 +35,7 @@ group :development, :test do
   gem "dotenv-rails"
   gem "factory_girl_rails"
   gem "ffaker"
-  gem "pry-rails"
+  gem "byebug"
   gem "rspec-rails", "~> 3.5"
   gem "rubocop", require: false
 end

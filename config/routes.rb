@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   devise_for :teachers
 
+  namespace :api do
+    namespace :v1 do
+      resources :topics, only: :update
+    end
+  end
+
   namespace :teachers do
     resource :dashboard, only: :show
     resources :courses do

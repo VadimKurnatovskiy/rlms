@@ -11,10 +11,22 @@ class SortableTopicsComponent extends React.Component {
     this.setState({
       topics: arrayMove(this.state.topics, oldIndex, newIndex),
     });
+
+    this.state.topics.forEach((topic, order_index) => {
+      $.ajax({
+        url: "/api/v1/topics/" + topic.id,
+        method: "PUT",
+        data: {
+          topic: {
+            order_index: order_index
+          }
+        }
+      });
+    });
   };
 
   render() {
-    return <CourseTopics topics={this.state.topics} onSortEnd={this.onSortEnd} />
+    return <CourseTopics topics={this.state.topics} pressDelay={200} onSortEnd={this.onSortEnd} />
   }
 }
 
@@ -34,8 +46,13 @@ const CourseTopics = SortableContainer(({topics}) => {
 const CourseTopic = SortableElement(({topic}) => {
   return (
     <div className="topicContainer well">
-      <div className="topicTitle">
-        {topic.title}
+      <div className="topicTitle pull-left">
+        <a href={`/teachers/topics/${topic.id}`}>{topic.title}</a>
+      </div>
+      <div className="topicActions pull-right">
+        <a href={`/teachers/topics/${topic.id}/edit`}>edit</a>
+      </div>
+      <div className="clearfix">
       </div>
     </div>
   )

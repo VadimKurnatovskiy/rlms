@@ -2,7 +2,7 @@ module Teachers
   class TopicsController < BaseController
     respond_to :html
 
-    TOPIC_PARAMS = %i[title description]
+    TOPIC_PARAMS = %i[title description order_index]
 
     expose :course
     expose :topic
@@ -10,8 +10,7 @@ module Teachers
     def show; end
 
     def create
-      topic.course = course
-      topic.save
+      result = Topics::Build.call(topic: topic, course: course)
 
       respond_with :teachers, course
     end
