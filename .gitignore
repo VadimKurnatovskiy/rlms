@@ -10,5 +10,6 @@
 config/database.yml
 .env
 /public/packs
+/public/packs-test
 /node_modules
 yarn-error.log
