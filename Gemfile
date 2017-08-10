@@ -12,6 +12,9 @@ gem "pg", "~> 0.18"
 gem "webpacker"
 gem "interactor", "~> 3.0"
 
+# services
+gem "rollbar"
+
 # auth
 gem "devise"
 

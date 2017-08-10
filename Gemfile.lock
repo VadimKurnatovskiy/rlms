@@ -166,6 +166,8 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    rollbar (2.15.0)
+      multi_json
     rspec-core (3.6.0)
       rspec-support (~> 3.6.0)
     rspec-expectations (3.6.0)
@@ -271,6 +273,7 @@ DEPENDENCIES
   letter_opener
   pg (~> 0.18)
   rails (~> 5.1.2)
+  rollbar
   rspec-rails (~> 3.5)
   rubocop
   sass-rails (~> 5.0)
