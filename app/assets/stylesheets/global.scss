@@ -2,6 +2,10 @@ body {
   padding-top: 60px;
 }
 
+h1, h2, h3 {
+  margin-top: 0px;
+}
+
 .alert-notice {
   @extend .alert-success;
 }
