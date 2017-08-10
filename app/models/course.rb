@@ -7,4 +7,6 @@ class Course < ApplicationRecord
 
   scope :published, -> { where(published: true) }
   scope :not_published, -> { where(published: false) }
+
+  scope :ordered_by_title, -> { order(title: :asc) }
 end
