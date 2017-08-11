@@ -1,6 +1,15 @@
 = simple_form_for [:teachers, topic] do |f|
   = f.input :title, required: true, autofocus: true
-
+  = f.input :content
   .text-center
     => f.submit class: "btn btn-default btn-sm"
-    = link_to "Delete Topic", teachers_topic_path(topic), method: :delete, data: { confirm: "Topic will be deleted with all data! Sure?" }
+
+br
+
+.panel.panel-danger
+  .panel-heading
+    h3.panel-title Danger zone!
+  .panel-body
+    p.text-justify
+      strong Если Вы хотите удалить тему, то обратите внимание, что вместе с темой будут удалены все прикреплённые к тексту изображения и файлы, а также будут удалены все записи об учащихся, изучавших тему и их прогрессе, оценках и результатах. Если Вы действительно хотите удалить тему и всю связанную с ней информацию, нажимите кнопку ниже.
+    .text-center = link_to "Delete Topic", teachers_topic_path(topic), method: :delete, class: "btn btn-danger", data: { confirm: "Topic will be deleted with all data! Sure?" }

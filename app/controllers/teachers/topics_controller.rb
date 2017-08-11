@@ -2,10 +2,11 @@ module Teachers
   class TopicsController < BaseController
     respond_to :html
 
-    TOPIC_PARAMS = %i[title description order_index]
+    TOPIC_PARAMS = %i[title description content order_index]
 
     expose :course
     expose :topic
+    expose :topic_content, -> { Redcarpet::Markdown.new(Redcarpet::Render::HTML.new()).render(topic.content) }
 
     def show; end
 

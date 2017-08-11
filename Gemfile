@@ -29,6 +29,9 @@ gem "sass-rails", "~> 5.0"
 gem "slim-rails"
 gem "uglifier", ">= 1.3.0"
 
+# markdown
+gem "redcarpet"
+
 group :development do
   gem "letter_opener"
 end
