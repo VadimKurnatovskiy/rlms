@@ -1,17 +1,17 @@
 .row
   .col-md-8.col-md-offset-2
     .text-center.welcome-text
-      h1 Welcome!
-      h3 RLMS - Remote Learning Management System
-      h4 We provide simple but powerful platform for teachers and learners
+      h1 Welcome to RLMS:
+      h3 Remote Learning Management System
+      h3 We provide simple but powerful platform for teachers and learners
       br
-      .row
-        .col-md-6
-          p.text-justify Teachers can create courses, manage topics, add materials, links, attach files. Teachers can invite learners to course, check learning progress, view results and help learners with studing.
-          br
-          .text-center = link_to "Log in as Teacher", new_teacher_session_path, class: "btn btn-primary  btn-lg"
+    .row
+      .col-md-6
+        h4.text-justify Teachers can create courses, manage topics, add materials, links, attach files. Teachers can invite learners to course, check learning progress, view results and help learners with studing.
+        br
+        .text-center = link_to "Log in as Teacher", new_teacher_session_path, class: "btn btn-default btn-lg"
 
-        .col-md-6
-          p.text-justify Learners can search for courses, learn topics, view learning materials. Learners can do tests, view learning progress and ask Teachers for help or leave comments with questions.
-          br
-          .text-center = link_to "Log in as Learner", new_learner_session_path, class: "btn btn-primary  btn-lg"
+      .col-md-6
+        h4.text-justify Learners can search for courses, learn topics, view learning materials. Learners can do tests, view learning progress and ask Teachers for help or leave comments with questions.
+        br
+        .text-center = link_to "Log in as Learner", new_learner_session_path, class: "btn btn-default  btn-lg"
