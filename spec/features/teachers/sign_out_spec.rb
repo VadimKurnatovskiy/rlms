@@ -4,7 +4,7 @@ feature "Sign Out" do
   include_context "teacher signed in"
 
   scenario "teacher signs out" do
-    visit "/"
+    visit teacher_root_path
 
     click_on current_teacher.full_name
 

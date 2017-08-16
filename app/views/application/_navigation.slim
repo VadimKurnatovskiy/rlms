@@ -11,4 +11,4 @@
 
     .collapse.navbar-collapse#bs-example-navbar-collapse-1
       = render "navigation_teacher" if teacher_signed_in?
-
+      = render "navigation_learner" if learner_signed_in?

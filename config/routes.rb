@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :learners
   devise_for :teachers
 
   namespace :api do
@@ -14,8 +15,16 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :learners do
+    resource :dashboard, only: :show
+  end
+
   authenticated :teacher do
     root to: "teachers/dashboard#show", as: :teacher_root
+  end
+
+  authenticated :learner do
+    root to: "learners/dashboard#show", as: :learner_root
   end
 
   get "pages/welcome"
