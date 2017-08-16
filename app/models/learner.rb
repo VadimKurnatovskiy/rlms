@@ -10,6 +10,9 @@ class Learner < ApplicationRecord
          :trackable,
          :validatable
 
+  has_many :course_participations
+  has_many :courses, through: :course_participations
+
   validates :first_name, :last_name, presence: true
 
   def full_name

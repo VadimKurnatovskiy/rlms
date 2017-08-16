@@ -3,6 +3,9 @@ class Course < ApplicationRecord
 
   has_many :topics, dependent: :destroy
 
+  has_many :course_participations
+  has_many :learners, through: :course_participations
+
   validates :title, :description, :teacher_id, presence: true
 
   scope :published, -> { where(published: true) }
