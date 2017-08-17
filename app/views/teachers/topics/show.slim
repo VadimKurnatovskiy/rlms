@@ -1,5 +1,21 @@
 .row
-  .col-md-12
+  .col-md-8.col-md-offset-2
     h2 = topic.course.title
     h3 = "Тема: #{topic.title}"
-hr
+    hr
+    h3 Материалы темы:
+    - if topic.materials.any?
+    - else
+      h4 Материалы не добавлены
+    .panel.panel-primary
+      .panel-heading
+        .panel-title Добавить материал:
+      .panel-body
+        = simple_form_for [:teachers, topic, topic.materials.new] do |f|
+          .row
+            .col-sm-6
+              = f.input :link
+            .col-sm-6
+              = f.input :attachment, as: :file
+          .clearfix
+            .text-center = f.submit "Добавить материал", class: "btn btn-default"

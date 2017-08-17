@@ -6,7 +6,9 @@ ruby "2.3.4"
 gem "rails", "~> 5.1.2"
 
 # core
+gem "carrierwave", "~> 1.0"
 gem "decent_exposure"
+gem "fog-aws"
 gem "foreman"
 gem "pg", "~> 0.18"
 gem "webpacker"

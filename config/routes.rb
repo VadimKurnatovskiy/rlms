@@ -11,8 +11,12 @@ Rails.application.routes.draw do
   namespace :teachers do
     resource :dashboard, only: :show
 
+    resources :materials, only: %i(create destroy)
+
     resources :courses do
-      resources :topics, shallow: true, except: :index
+      resources :topics, shallow: true, except: :index do
+        resources :materials, shallow: true, only: %i(create destroy)
+      end
     end
   end
 
