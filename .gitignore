@@ -9,7 +9,10 @@
 
 config/database.yml
 .env
+
 /public/packs
 /public/packs-test
+/public/uploads
+
 /node_modules
 yarn-error.log

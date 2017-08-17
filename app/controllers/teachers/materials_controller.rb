@@ -2,6 +2,7 @@ module Teachers
   class MaterialsController < BaseController
     respond_to :html
 
+    expose :topic
     expose :material
 
     def create
@@ -24,7 +25,9 @@ module Teachers
     private
 
     def material_params
-      params.require(:material).permit(:link, :attachment)
+      params.require(:material)
+            .permit(:title, :attachment)
+            .merge({ topic_id: topic.id })
     end
   end
 end
