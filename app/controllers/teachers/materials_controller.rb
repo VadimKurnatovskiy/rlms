@@ -16,7 +16,7 @@ module Teachers
     end
 
     def destroy
-      material.destory
+      material.destroy
 
       redirect_back fallback_location: teacher_root_path
     end
