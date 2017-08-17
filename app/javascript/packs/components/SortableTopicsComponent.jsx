@@ -45,7 +45,7 @@ const CourseTopics = SortableContainer(({topics}) => {
 
 const CourseTopic = SortableElement(({topic}) => {
   return (
-    <div className="topicContainer well">
+    <div className="topicContainer sortableElement well">
       <div className="topicTitle pull-left">
         <a href={`/teachers/topics/${topic.id}`}>{topic.title}</a>
       </div>

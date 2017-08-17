@@ -18,4 +18,8 @@ class Learner < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def available_courses
+    Course.where.not(id: courses.ids).published.ordered_by_title
+  end
 end

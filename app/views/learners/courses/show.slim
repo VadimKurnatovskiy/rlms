@@ -1,0 +1,14 @@
+.row
+  .col-md-8.col-md-offset-2
+    h3 = course.title
+    p = course.description
+
+    hr
+
+    h4 Темы курса:
+
+    - course.topics.ordered_by_index.each do |topic|
+      .topicContainer.well
+        .topicTitle.pull-left
+          = link_to topic.title, learners_topic_path(topic)
+        .clearfix
