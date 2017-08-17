@@ -1,17 +1,19 @@
 .row
   .col-md-8.col-md-offset-2
     .text-center.welcome-text
-      h1 Welcome to RLMS:
-      h3 Remote Learning Management System
-      h3 We provide simple but powerful platform for teachers and learners
-      br
+      h2 Remote Learning Management System
+      h4 Система Управления Удалённым Обучением
+      hr
+      h3 Простая и удобная платформа для организации удалённого обучения для сотрудников компаний.
     .row
       .col-md-6
-        h4.text-justify Teachers can create courses, manage topics, add materials, links, attach files. Teachers can invite learners to course, check learning progress, view results and help learners with studing.
+        h4.text-justify
+          | Вы хотите обучать сотрудников своей компании или организовать обучение для коллег своего отдела? Вы можете создавать курсы, наполнять их темами, добавлять учебные материалы, ссылки, файлы, тесты, контрольные вопросы и задания. Вы сможете приглашать обучающихся и видеть процесс изучения ими тем курса, контролировать результаты выполнения тестов и заданий.
         br
-        .text-center = link_to "Log in as Teacher", new_teacher_session_path, class: "btn btn-default btn-lg"
+        .text-center = link_to "Вход для Преподавателей", new_teacher_session_path, class: "btn btn-default btn-lg"
 
       .col-md-6
-        h4.text-justify Learners can search for courses, learn topics, view learning materials. Learners can do tests, view learning progress and ask Teachers for help or leave comments with questions.
+        h4.text-justify
+          | Вы студент ВУЗа или участник образовательной программы Вашей компании? Платформа предоставляет Учащимся возможность находить интересующие их курсы, подписываться на открытые курсы, изучать содержание тем курса, скачивать учебные материалы, выполнять тесты и задания в любое удобное время везде, где есть доступ в Интернет.
         br
-        .text-center = link_to "Log in as Learner", new_learner_session_path, class: "btn btn-default  btn-lg"
+        .text-center = link_to "Вход для Учащихся", new_learner_session_path, class: "btn btn-default  btn-lg"
