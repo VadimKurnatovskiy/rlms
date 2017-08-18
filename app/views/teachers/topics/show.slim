@@ -3,39 +3,34 @@
     h2 = topic.course.title
     h3 = "Тема: #{topic.title}"
     hr
-    ul.nav.nav-tabs role="tablist"
-      li role="presentation" class="active"
-        a href="#home" aria-controls="home" role="tab" data-toggle="tab" Материалы
-      li role="presentation"
-        a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" Вопросы
 
-    .tab-content
-      div role="tabpanel" class="tab-pane active" id="home"
-        br
-        h3 Материалы темы:
-        - if topic.materials.any?
-          = render topic.materials
-        - else
-          h4 Материалы не добавлены
-        .panel.panel-primary
-          .panel-heading
-            .panel-title Добавить материал:
-          .panel-body
-            = simple_form_for [:teachers, topic, topic.materials.new] do |f|
-              .row
-                .col-sm-6
-                  = f.input :title
-                .col-sm-6
-                  = f.input :attachment, as: :file
-              .clearfix
-                .text-center = f.submit "Добавить материал", class: "btn btn-default"
-      div role="tabpanel" class="tab-pane" id="profile"
-        br
-        h3 Вопросы по теме:
-        - if topic.questions.any?
-          = render topic.questions
-        - else
-          h4 Материалы не добавлены
+    h3 Материалы темы:
+    - if topic.materials.any?
+      = render topic.materials
+    - else
+      h4 Материалы не добавлены
+    .panel.panel-primary
+      .panel-heading
+        .panel-title Добавить материал:
+      .panel-body
+        = simple_form_for [:teachers, topic, topic.materials.new] do |f|
+          .row
+            .col-sm-6
+              = f.input :title
+            .col-sm-6
+              = f.input :attachment, as: :file
+          .clearfix
+            .text-center = f.submit "Добавить материал", class: "btn btn-default"
 
-
-
+    h3 Вопросы по теме:
+    - if topic.questions.any?
+      = render topic.questions
+    - else
+      h4 Материалы не добавлены
+    .panel.panel-primary
+      .panel-heading
+        .panel-title Добавить вопрос:
+      .panel-body
+        = simple_form_for [:teachers, topic, topic.questions.new] do |f|
+          = f.input :title
+          .text-center = f.submit "Добавить вопрос", class: "btn btn-default"

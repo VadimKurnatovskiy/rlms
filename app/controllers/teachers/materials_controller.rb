@@ -8,7 +8,7 @@ module Teachers
     def create
       material.save
 
-      redirect_back fallback_location: teacher_root_path
+      redirect_back fallback_location: teachers_topic_path(topic)
     end
 
     def update
@@ -18,7 +18,7 @@ module Teachers
     def destroy
       material.destroy
 
-      redirect_back fallback_location: teacher_root_path
+      redirect_back fallback_location: teachers_topic_path(topic)
     end
 
 

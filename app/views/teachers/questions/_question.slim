@@ -1,0 +1,6 @@
+.questionContainer.well
+  .questionTitle.pull-left
+    strong = question.title
+  .questionActions.pull-right
+    = link_to "delete", teachers_question_path(question), method: :delete, data: { confirm: "Удалить вопрос, варианты ответов и ответы, данные учащимися?" }
+  .clearfix
