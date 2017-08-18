@@ -20,7 +20,7 @@ module Teachers
     def destroy
       question.destroy
 
-      redirect_back fallback_location: teachers_topic_path
+      redirect_back fallback_location: teachers_topic_path(topic)
     end
 
     private

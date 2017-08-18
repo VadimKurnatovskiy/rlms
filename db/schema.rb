@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170818120910) do
+ActiveRecord::Schema.define(version: 20170818141405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answer_variants", force: :cascade do |t|
+    t.integer "question_id"
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "correct"
+  end
 
   create_table "course_participations", force: :cascade do |t|
     t.integer "course_id"

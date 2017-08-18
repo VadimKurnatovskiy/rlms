@@ -4,3 +4,11 @@
   .questionActions.pull-right
     = link_to "delete", teachers_question_path(question), method: :delete, data: { confirm: "Удалить вопрос, варианты ответов и ответы, данные учащимися?" }
   .clearfix
+  p Варианты ответов:
+  = render question.answer_variants
+
+  strong Добавить вариант ответа:
+  = simple_form_for [:teachers, question, question.answer_variants.new] do |f|
+    = f.input :text, class: "form-control"
+    = f.input :correct, class: "form-control"
+    .text-center = f.submit "Добавить вариант ответа", class: "btn btn-default btn-sm"
