@@ -11,6 +11,7 @@ gem "decent_exposure"
 gem "fog-aws"
 gem "foreman"
 gem "pg", "~> 0.18"
+gem "rails_admin", "~> 1.2"
 gem "webpacker"
 gem "interactor", "~> 3.0"
 

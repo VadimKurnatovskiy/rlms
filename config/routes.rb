@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :administrators
   devise_for :learners
   devise_for :teachers
+
+  mount RailsAdmin::Engine => '/administrator', as: 'rails_admin'
 
   namespace :api do
     namespace :v1 do
@@ -30,6 +33,10 @@ Rails.application.routes.draw do
     resources :course_participations, only: %i(create destroy)
     resources :courses, only: %i(index show)
     resources :topics, only: :show
+  end
+
+  authenticated :administrator do
+    root to: "rails_admin/main#dashboard", as: :administrator_root
   end
 
   authenticated :teacher do
