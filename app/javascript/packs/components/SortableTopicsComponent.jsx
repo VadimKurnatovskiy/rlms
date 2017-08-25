@@ -50,7 +50,9 @@ const CourseTopic = SortableElement(({topic}) => {
         <a href={`/teachers/topics/${topic.id}`}>{topic.title}</a>
       </div>
       <div className="topicActions pull-right">
-        <a href={`/teachers/topics/${topic.id}/edit`}>edit</a>
+        <a href={`/teachers/topics/${topic.id}/edit`}>
+          <span className='glyphicon glyphicon-pencil'></span>
+        </a>
       </div>
       <div className="clearfix"></div>
     </div>

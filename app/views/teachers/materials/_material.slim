@@ -1,6 +1,7 @@
-.materialContainer.well
-  .materialTitle.pull-left
+.well.material-container data-material-id=material.id
+  .material-title.pull-left
     = link_to material.attachment.file.filename, material.attachment_url
-  .materialActions.pull-right
-    = link_to "delete", teachers_material_path(material), method: :delete, data: { confirm: "Удалить материал и загруженный файл?" }
+  .material-actions.pull-right
+    = link_to teachers_material_path(material), method: :delete, data: { remote: true, confirm: "Удалить материал и загруженный файл?" } do
+      span.glyphicon.glyphicon-remove
   .clearfix
