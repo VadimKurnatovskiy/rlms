@@ -14,10 +14,8 @@
       #materials.tab-pane.active role="tabpanel"
         .panel.panel-default
           .panel-body
-            - if topic.materials.any?
-              ul.list-group#materials-container = render topic.materials
-            - else
-              h4 Материалы не добавлены
+             ul.list-group#materials-container
+              = render topic.materials
         .panel.panel-default
           .panel-heading Добавить материал:
           .panel-body
@@ -30,15 +28,13 @@
               .clearfix
                 .text-center = f.submit "Добавить материал", class: "btn btn-default"
       #questions.tab-pane role="tabpanel"
-        h3 Вопросы темы
-        - if topic.questions.any?
-          = render topic.questions
-        - else
-          h4 Вопросы не добавлены
-        .panel.panel-primary
-          .panel-heading
-            .panel-title Добавить вопрос:
+        .panel.panel-default
           .panel-body
-            = simple_form_for [:teachers, topic, topic.questions.new] do |f|
+            ul.list-group.questions-container
+              = render topic.questions
+        .panel.panel-default
+          .panel-heading Добавить вопрос:
+          .panel-body
+            = simple_form_for [:teachers, topic, topic.questions.new], remote: true do |f|
               = f.input :title
               .text-center = f.submit "Добавить вопрос", class: "btn btn-default"

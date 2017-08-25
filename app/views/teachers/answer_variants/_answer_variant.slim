@@ -1,3 +1,7 @@
-.answer-variant-container
+li.list-group-item.answer-variant-container
   .answer-variant-text
+    - if answer_variant.correct
+      span.glyphicon.glyphicon-ok-sign>
+    - else
+      span.glyphicon.glyphicon-remove-sign>
     = answer_variant.text

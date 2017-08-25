@@ -1,0 +1,4 @@
+= simple_form_for [:teachers, question, question.answer_variants.new], remote: true do |f|
+    = f.input :text, class: "form-control", label: false, placeholder: "Добавить вариант ответа"
+    = f.input :correct, class: "form-control"
+    .text-center = f.submit "Добавить вариант ответа", class: "btn btn-default btn-sm"
