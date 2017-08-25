@@ -12,23 +12,23 @@
 
     .tab-content
       #materials.tab-pane.active role="tabpanel"
-        h3 Материалы темы
-        - if topic.materials.any?
-          = render topic.materials
-        - else
-          h4 Материалы не добавлены
-      .panel.panel-primary
-        .panel-heading
-          .panel-title Добавить материал:
-        .panel-body
-          = simple_form_for [:teachers, topic, topic.materials.new], remote: true do |f|
-            .row
-              .col-sm-6
-                = f.input :title
-              .col-sm-6
-                = f.input :attachment, as: :file
-            .clearfix
-              .text-center = f.submit "Добавить материал", class: "btn btn-default"
+        .panel.panel-default
+          .panel-body
+            - if topic.materials.any?
+              ul.list-group#materials-container = render topic.materials
+            - else
+              h4 Материалы не добавлены
+        .panel.panel-default
+          .panel-heading Добавить материал:
+          .panel-body
+            = simple_form_for [:teachers, topic, topic.materials.new], remote: true do |f|
+              .row
+                .col-sm-6
+                  = f.input :title
+                .col-sm-6
+                  = f.input :attachment, as: :file
+              .clearfix
+                .text-center = f.submit "Добавить материал", class: "btn btn-default"
       #questions.tab-pane role="tabpanel"
         h3 Вопросы темы
         - if topic.questions.any?

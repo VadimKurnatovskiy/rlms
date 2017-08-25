@@ -1,6 +1,6 @@
-.well.material-container data-material-id=material.id
+li.list-group-item.material-container data-material-id=material.id
   .material-title.pull-left
-    = link_to material.attachment.file.filename, material.attachment_url
+    = link_to material.title_h, material.attachment_url
   .material-actions.pull-right
     = link_to teachers_material_path(material), method: :delete, data: { remote: true, confirm: "Удалить материал и загруженный файл?" } do
       span.glyphicon.glyphicon-remove
