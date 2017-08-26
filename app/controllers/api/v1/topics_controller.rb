@@ -6,6 +6,11 @@ module Api
       TOPIC_PARAMS = %i[title description order_index]
 
       expose :topic
+      expose :course
+
+      def index
+        render json: course.topics.ordered_by_index
+      end
 
       def update
         topic.update_attributes(topic_params)

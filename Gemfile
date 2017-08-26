@@ -14,6 +14,7 @@ gem "pg", "~> 0.18"
 gem "rails_admin", "~> 1.2"
 gem "webpacker"
 gem "interactor", "~> 3.0"
+gem "active_model_serializers", "~> 0.10.0"
 
 # services
 gem "rollbar"
@@ -31,9 +32,6 @@ gem "jquery-rails"
 gem "sass-rails", "~> 5.0"
 gem "slim-rails"
 gem "uglifier", ">= 1.3.0"
-
-# markdown
-gem "redcarpet"
 
 group :development do
   gem "letter_opener"

@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :topics, only: :update
+      resources :courses, only: [] do
+        resources :topics, shallow: true, only: %w(index show update)
+      end
     end
   end
 
