@@ -1,7 +1,11 @@
-li.list-group-item.answer-variant-container
-  .answer-variant-text
+li.list-group-item.answer-variant-container data-answer-variant-id=answer_variant.id
+  .answer-variant-text.pull-left
     - if answer_variant.correct
       span.glyphicon.glyphicon-ok-sign>
     - else
       span.glyphicon.glyphicon-remove-sign>
     = answer_variant.text
+  .answer-variant-actions.pull-right
+    = link_to teachers_answer_variant_path(answer_variant), method: :delete, data: { remote: true, confirm: "Вы уверены, что хотите удалить вариант ответа?" }
+      span.glyphicon.glyphicon-remove
+  .clearfix
