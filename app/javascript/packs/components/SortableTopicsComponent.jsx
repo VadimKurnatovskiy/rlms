@@ -55,6 +55,7 @@ const CourseTopic = SortableElement(({topic}) => {
         </a>
       </div>
       <div className="clearfix"></div>
+      <span>Материалов: {topic.materials_count}</span>
     </div>
   )
 })
