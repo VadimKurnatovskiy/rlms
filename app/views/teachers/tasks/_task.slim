@@ -1,0 +1,7 @@
+li.list-group-item.task-container data-task-id=task.id
+  .task-title.pull-left
+    h4 = link_to task.title_h, task.attachment_url
+  .task-actions.pull-right
+    h4 = link_to teachers_task_path(task), method: :delete, data: { remote: true, confirm: "Удалить задание и загруженный файл?" } do
+      span.glyphicon.glyphicon-remove
+  .clearfix

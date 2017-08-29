@@ -3,6 +3,7 @@ class Topic < ApplicationRecord
 
   has_many :materials, dependent: :destroy
   has_many :questions, dependent: :destroy
+  has_many :tasks, dependent: :destroy
 
   validates :title, :course_id, presence: true
 

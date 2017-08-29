@@ -6,35 +6,16 @@
 
     ul.nav.nav-tabs role="tablist"
       li.active role="presentation"
-        a href="#materials" aria-controls="home" role="tab" data-toggle="tab" Материалы
+        a href="#materials" aria-controls="materials" role="tab" data-toggle="tab"
+          strong Материалы
       li role="presentation"
-        a href="#questions" aria-controls="home" role="tab" data-toggle="tab" Вопросы
+        a href="#questions" aria-controls="questions" role="tab" data-toggle="tab"
+          strong Вопросы
+      li role="presentation"
+        a href="#tasks" area-controls="tasks" role="tab" data-toggle="tab"
+          strong Домашние задания
 
     .tab-content
-      #materials.tab-pane.active role="tabpanel"
-        .panel.panel-default
-          .panel-body
-             ul.list-group#materials-container
-              = render topic.materials
-        .panel.panel-default
-          .panel-heading Добавить материал:
-          .panel-body
-            = simple_form_for [:teachers, topic, topic.materials.new], remote: true do |f|
-              .row
-                .col-sm-6
-                  = f.input :title
-                .col-sm-6
-                  = f.input :attachment, as: :file
-              .clearfix
-                .text-center = f.submit "Добавить материал", class: "btn btn-default"
-      #questions.tab-pane role="tabpanel"
-        .panel.panel-default
-          .panel-body
-            ul.list-group.questions-container
-              = render topic.questions
-        .panel.panel-default
-          .panel-heading Добавить вопрос:
-          .panel-body
-            = simple_form_for [:teachers, topic, topic.questions.new], remote: true do |f|
-              = f.input :title
-              .text-center = f.submit "Добавить вопрос", class: "btn btn-default"
+      = render "teachers/topics/materials"
+      = render "teachers/topics/questions"
+      = render "teachers/topics/tasks"

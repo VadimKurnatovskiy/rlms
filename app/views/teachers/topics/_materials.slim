@@ -1,0 +1,17 @@
+#materials.tab-pane.active role="tabpanel"
+  .panel.panel-default
+    .panel-heading Материалы для изучения
+    .panel-body
+      ul.list-group#materials-container
+        = render topic.materials
+  .panel.panel-default
+    .panel-heading Загрузить материал:
+    .panel-body
+      = simple_form_for [:teachers, topic, topic.materials.new], remote: true do |f|
+        .row
+          .col-sm-6
+            = f.input :title
+          .col-sm-6
+            = f.input :attachment, as: :file
+        .clearfix
+          .text-center = f.submit "Загрузить материал", class: "btn btn-default"

@@ -6,4 +6,5 @@ describe Topic do
 
   it { is_expected.to have_many(:materials) }
   it { is_expected.to have_many(:questions) }
+  it { is_expected.to have_many(:tasks) }
 end

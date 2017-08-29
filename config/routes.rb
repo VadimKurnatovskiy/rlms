@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
     resources :courses do
       resources :topics, shallow: true, except: :index do
+        resources :tasks, only: %w(create destroy)
         resources :questions, shallow: true, only: %i(create update destroy) do
           resources :answer_variants, shallow: true, only: %i(create destroy)
         end

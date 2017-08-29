@@ -47,12 +47,16 @@ const CourseTopic = SortableElement(({topic}) => {
   return (
     <div className="topicContainer sortableElement well">
       <div className="topicTitle pull-left">
-        <a href={`/teachers/topics/${topic.id}`}>{topic.title}</a>
+        <h4>
+          <a href={`/teachers/topics/${topic.id}`}>{topic.title}</a>
+        </h4>
       </div>
       <div className="topicActions pull-right">
-        <a href={`/teachers/topics/${topic.id}/edit`}>
-          <span className='glyphicon glyphicon-pencil'></span>
-        </a>
+        <h4>
+          <a href={`/teachers/topics/${topic.id}/edit`}>
+            <span className='glyphicon glyphicon-pencil'></span>
+          </a>
+        </h4>
       </div>
       <div className="clearfix"></div>
       <span>Материалов: {topic.materials_count}</span>

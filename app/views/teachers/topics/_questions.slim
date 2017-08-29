@@ -1,0 +1,12 @@
+#questions.tab-pane role="tabpanel"
+  .panel.panel-default
+    .panel-heading Тесты для проверки знаний
+    .panel-body
+      ul.list-group.questions-container
+        = render topic.questions
+  .panel.panel-default
+    .panel-heading Добавить вопрос:
+    .panel-body
+      = simple_form_for [:teachers, topic, topic.questions.new], remote: true do |f|
+        = f.input :title
+        .text-center = f.submit "Добавить вопрос", class: "btn btn-default"

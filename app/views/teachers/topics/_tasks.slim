@@ -1,0 +1,17 @@
+#tasks.tab-pane role="tabpanel"
+  .panel.panel-default
+    .panel-heading Домашние задания
+    .panel-body
+      ul.list-group#tasks-container
+        = render topic.tasks
+  .panel.panel-default
+    .panel-heading Загрузить задание:
+    .panel-body
+      = simple_form_for [:teachers, topic, topic.tasks.new], remote: true do |f|
+        .row
+          .col-sm-6
+            = f.input :title
+          .col-sm-6
+            = f.input :attachment, as: :file
+        .clearfix
+          .text-center = f.submit "Загрузить задание", class: "btn btn-default"

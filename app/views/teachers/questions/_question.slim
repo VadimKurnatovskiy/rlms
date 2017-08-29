@@ -2,7 +2,8 @@ li.list-group-item.question-container data-question-id=question.id
   .question-title.pull-left
     h4
       a href="#answer-variants-container-#{question.id}" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="#answer-variants-container-#{question.id}"
-        = question.title
+        => question.title
+        span.caret
   .question-actions.pull-right
     h4 = link_to teachers_question_path(question), method: :delete, data: { confirm: "Удалить вопрос, варианты ответов и ответы, данные учащимися?", remote: true }
       span.glyphicon.glyphicon-remove
