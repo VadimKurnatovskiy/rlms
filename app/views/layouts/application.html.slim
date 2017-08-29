@@ -24,6 +24,9 @@ html lang="en"
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
 
   body
+    - if Rails.env.staging? || Rails.env.production?
+      = render "ga"
+
     = render "navigation"
 
     .container
