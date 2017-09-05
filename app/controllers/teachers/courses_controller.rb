@@ -34,18 +34,6 @@ module Teachers
 
     private
 
-    # def find_course_by_id_or_slug
-    #   params[:slug] ? find_by_slug : find_by_id
-    # end
-
-    # def find_by_slug
-    #   Course.find_by_slug(params[:slug])
-    # end
-
-    # def find_by_id
-    #   Course.find(params[:id])
-    # end
-
     def course_params
       params.require(:course).permit(*COURSE_PARAMS)
     end
