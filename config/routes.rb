@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
     resources :materials, only: %i(create destroy)
 
-    resources :courses do
+    resources :courses, param: :slug do
       resources :topics, shallow: true, except: :index do
         resources :tasks, only: %w(create destroy)
         resources :questions, shallow: true, only: %i(create update destroy) do

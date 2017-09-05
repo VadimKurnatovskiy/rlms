@@ -5,7 +5,8 @@ class Topic < ApplicationRecord
   has_many :questions, dependent: :destroy
   has_many :tasks, dependent: :destroy
 
-  validates :title, :course_id, presence: true
+  validates :title, :slug, :course_id, presence: true
+  validates :title, :slug, uniqueness: true
 
   scope :ordered_by_index, -> { order(order_index: :asc) }
 
