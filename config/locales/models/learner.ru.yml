@@ -1,0 +1,12 @@
+ru:
+  activerecord:
+    models:
+      learner: Учащийся
+    attributes:
+      learner:
+        first_name: Имя
+        last_name: Фамилия
+        email: Адрес E-Mail
+        current_password: Текущий пароль
+        password: Пароль
+        password_confirmation: Подтверждение пароля

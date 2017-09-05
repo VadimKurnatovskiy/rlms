@@ -1,7 +1,7 @@
 .row
   .col-md-6
     .well
-      h3 Account settings
+      h3 Мой аккаунт
 
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         p Currently waiting confirmation for: #{resource.unconfirmed_email}
@@ -20,16 +20,16 @@
           = f.input :password_confirmation, required: false
 
         .form-actions
-          = f.button :submit, "Update"
+          = f.button :submit
   .col-md-6
     .well
-      h3 Delete account
-      p You can completely delete your account with all blogs, stories and other data.
+      h3 Удаление аккаунта
+      p.text-justify Вы имеете возможность удалить аккаунт, но вместе с ним будут удалены все данные, связанные с изучением Вами курсов, весь прогресс учёбы, результаты тестов, ответы, домашние задания, оценки и аттестации!
       p
-        strong This action can not be reverted!
-      = link_to "I want to remove my account with all data!",
+        strong Удаление аккаунта нельзя отменить!
+      .text-center = link_to "Я хочу удалить мой аккаунт и всю информацию!",
             registration_path(resource_name),
             class: "btn btn-danger",
-            data: { confirm: "Are you sure? This will remove your account with all data!" },
+            data: { confirm: "Вы действительно хотите удалить аккаунт и всю связанную с ним информацию? Аккаунт будет удалён, больше предупреждений не будет!" },
             method: :delete
 
