@@ -21,7 +21,7 @@ module Rlms
     config.load_defaults 5.1
 
     I18n.load_path += Dir[Rails.root.join("config", "locales", "**/*.{rb,yml}").to_s]
-    config.i18n.default_locale = :ru
+    config.i18n.default_locale = :en
 
     config.generators.system_tests = nil
   end
