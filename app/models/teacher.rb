@@ -5,10 +5,10 @@ class Teacher < ApplicationRecord
          :rememberable,
          :timeoutable,
          :trackable,
-         :validatable
-         # :confirmable,
+         :validatable,
+         :confirmable,
          # :omniauthable,
-         # :registerable,
+         :registerable
 
   validates :first_name, :last_name, presence: true
 

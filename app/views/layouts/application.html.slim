@@ -23,7 +23,7 @@ html lang="en"
     /[if lt IE 9]
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
 
-  body
+  body class="#{'guest-background' unless teacher_signed_in? || learner_signed_in?}"
     - if Rails.env.staging? || Rails.env.production?
       = render "ga"
 
