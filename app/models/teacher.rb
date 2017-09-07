@@ -1,14 +1,14 @@
 class Teacher < ApplicationRecord
-  devise :confirmable,
-         :database_authenticatable,
+  devise :database_authenticatable,
          :lockable,
-         # :omniauthable,
          :recoverable,
-         :registerable,
          :rememberable,
          :timeoutable,
          :trackable,
          :validatable
+         # :confirmable,
+         # :omniauthable,
+         # :registerable,
 
   validates :first_name, :last_name, presence: true
 

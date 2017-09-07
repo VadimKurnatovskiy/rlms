@@ -10,3 +10,9 @@ ru:
         current_password: Текущий пароль
         password: Пароль
         password_confirmation: Подтверждение пароля
+    errors:
+      models:
+        learner:
+          attributes:
+            email:
+              blank: поле должно быть заполнено
