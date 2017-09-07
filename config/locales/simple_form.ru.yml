@@ -32,4 +32,8 @@ ru:
   helpers:
     submit:
       learner:
+        create: "Регистрация"
+        update: "Сохранить изменения"
+      teacher:
+        create: "Регистрация"
         update: "Сохранить изменения"
