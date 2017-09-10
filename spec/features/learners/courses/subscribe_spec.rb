@@ -9,7 +9,6 @@ feature "Learner subscribes to course" do
   end
 
   scenario "course is added to my courses page" do
-    byebug
     expect(page).to have_content "Мои курсы [0]"
     click_button "Подписаться на курс"
     expect(page).to have_content "Мои курсы [1]"
