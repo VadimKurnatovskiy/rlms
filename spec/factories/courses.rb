@@ -5,4 +5,8 @@ FactoryGirl.define do
     slug "my-course"
     description "My Course description"
   end
+
+  trait :published do
+    published :true
+  end
 end
