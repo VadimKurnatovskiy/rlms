@@ -3,6 +3,8 @@
 
 ## Getting started
 
+Current production URL is https://rlms.online
+
 ### Prepare dependencies
 
 Make sure you have installed application dependencies:
