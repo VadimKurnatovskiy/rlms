@@ -41,6 +41,8 @@ Run application and navigate at https://localhost:5000 using web browser to open
 bin/server
 ```
 
+Sign in as ```teacher_1@example.com/123456``` or as ```learner_1@example.com/123456```
+
 ## Resources
 
 - Task manager: [PivotalTracker](https://www.pivotaltracker.com/n/projects/2098243)

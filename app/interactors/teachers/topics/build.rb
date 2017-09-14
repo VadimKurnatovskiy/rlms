@@ -7,7 +7,7 @@ module Teachers
 
       def call
         build!
-        byebug
+
         context.failure! unless topic.save
       end
 
