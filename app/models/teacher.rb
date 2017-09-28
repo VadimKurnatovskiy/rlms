@@ -10,8 +10,9 @@ class Teacher < ApplicationRecord
          # :omniauthable,
          :registerable
 
-  validates :first_name, :last_name, presence: true
-
+  validates :first_name, :locale, :last_name, presence: true
+  validates :locale, inclusion: { in: %w(en ru) }
+  
   has_many :courses, dependent: :destroy
 
   def full_name

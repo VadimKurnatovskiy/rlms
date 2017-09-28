@@ -5,7 +5,8 @@ FactoryGirl.define do
     email { generate(:teacher_email) }
     password "123456"
     password_confirmation "123456"
-
+    locale "en"
+    
     confirmed_at Time.now
   end
 

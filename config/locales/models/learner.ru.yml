@@ -6,6 +6,7 @@ ru:
       learner:
         first_name: Имя
         last_name: Фамилия
+        locale: Язык интерфейса
         email: Адрес E-Mail
         current_password: Текущий пароль
         password: Пароль
