@@ -1,7 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  helper_method :anyone_signed_in?
+
   before_action :configure_permitted_parameters, if: :devise_controller?
+  
+  def anyone_signed_in?
+    teacher_signed_in? || learner_signed_in?
+  end
 
   protected
 
