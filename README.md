@@ -1,6 +1,8 @@
 # RLMS
 ## Remote Learning Management System
 
+[![Build Status](https://semaphoreci.com/api/v1/vladimirbazhanov/rlms/branches/master/badge.svg)](https://semaphoreci.com/vladimirbazhanov/rlms)
+
 ## Getting started
 
 Current production URL is https://rlms.online
