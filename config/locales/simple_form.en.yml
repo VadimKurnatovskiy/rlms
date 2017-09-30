@@ -32,10 +32,10 @@ en:
   helpers:
     submit:
       learner:
-        create: "Registration"
+        create: "Sign up"
         update: "Save changes"
       teacher:
-        create: "Registration"
+        create: "Sign up"
         update: "Save changes"
       topic:
         create: "Add topic"

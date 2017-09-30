@@ -7,7 +7,7 @@ feature "Teacher edits course" do
 
   background do
     visit teachers_course_path(course)
-    click_on "Edit course"
+    click_on "Edit course settings"
   end
 
   scenario "with valid parameters" do
