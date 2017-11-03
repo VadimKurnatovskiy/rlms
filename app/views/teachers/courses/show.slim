@@ -13,8 +13,16 @@
     .pull-right
       = link_to t("course.edit_button"), edit_teachers_course_path(course), class: "btn btn-default btn-sm"
     .clearfix
+
     hr
+
     h4 Темы курса:
+    - course.topics.ordered_by_index.each do |topic|
+      .topicContainer.well
+        .topicTitle.pull-left
+          = link_to topic.title, teachers_topic_path(topic)
+        .clearfix
+
     p
       strong Перетащите темы для изменения порядка
 
