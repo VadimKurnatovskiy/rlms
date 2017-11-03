@@ -10,4 +10,8 @@
       .topicContainer.well
         .topicTitle.pull-left
           = link_to topic.title, learners_topic_path(topic)
+        .topicTitle.pull-right
+          - topic.materials.each do |material|
+            = link_to material.attachment_url
+            br
         .clearfix
