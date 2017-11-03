@@ -8,7 +8,7 @@ module Teachers
       def call
         build!
 
-        context.failure! unless topic.save
+        context.fail!(message: "Тема не может быть сохранена") unless topic.save
       end
 
       private
