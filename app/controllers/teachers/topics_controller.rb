@@ -12,6 +12,8 @@ module Teachers
     def create
       result = Topics::Build.call(topic: topic, course: course)
 
+      flash[:alert] = result.message unless result.success?
+
       respond_with :teachers, course
     end
 
