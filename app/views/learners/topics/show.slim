@@ -1,16 +1,17 @@
 .row
-  .col-md-12
-    strong Курс:
-    h4 = course.title
-    strong Тема:
-    h3= topic.title
+  .col-md-8.col-md-offset-2
+    h2 = topic.course.title
+    h3 = "Тема: #{topic.title}"
     hr
-    .row
-      .col-md-6
-        h3 Материалы для изучения:
-        ul.list-group#materials-container
-          = render topic.materials
-      .col-md-6
-        h3 Задания:
-        ul.list-group#tasks-container
-          = render topic.tasks
+
+    ul.nav.nav-tabs role="tablist"
+      li.active role="presentation"
+        a href="#materials" aria-controls="materials" role="tab" data-toggle="tab"
+          strong Материалы
+      li role="presentation"
+        a href="#tasks" area-controls="tasks" role="tab" data-toggle="tab"
+          strong Домашние задания
+
+    .tab-content
+      = render "learners/topics/materials"
+      = render "learners/topics/tasks"
