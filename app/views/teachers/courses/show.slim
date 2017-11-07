@@ -25,6 +25,7 @@
       = simple_form_for [:teachers, course, course.topics.new] do |f|
         = f.input :title, required: true, autofocus: true
         = f.input :slug, required: true
+        = f.input :published
 
         .text-center = f.submit class: "btn btn-default btn-sm"
 
