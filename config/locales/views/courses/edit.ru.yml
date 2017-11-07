@@ -1,4 +1,19 @@
 ru:
+  simple_form:
+    labels:
+      course:
+        title: "Название"
+        slug: "Уникальное имя"
+        description: "Описание"
+        published: "Опубликовать"
+  helpers:
+    submit:
+      course:
+        create: "Создать курс"
+        update: "Обновить"
   course:
     edit_button: "Изменить настройки курса"
     destroy_button: "Удалить курс"
+    create_text: "Создать новый курс"
+    confirmation: "Вы уверены?"
+    edit_text: "Изменить курс"

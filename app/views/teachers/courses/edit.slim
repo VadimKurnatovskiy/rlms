@@ -1,9 +1,9 @@
 .row
   .col-md-8.col-md-offset-2
-    h3 Edit course
+    h3 =t("course.edit_text")
     hr
     = render "form"
     p
     - if course.topics.empty?
       .text-center  
-        = link_to t("course.destroy_button"), teachers_course_path(course), class: "btn btn-danger", data: { confirm: 'Are you sure?' }, method: :delete
+        = link_to t("course.destroy_button"), teachers_course_path(course), class: "btn btn-danger", data: { confirm: t("course.confirmation") }, method: :delete

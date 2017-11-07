@@ -1,4 +1,19 @@
 en:
+  simple_form:
+    labels:
+      course:
+        title: "Title"
+        slug: "Slug"
+        description: "Description"
+        published: "Published"
+  helpers:
+    submit:
+      course:
+        create: "Create course"
+        update: "Update"
   course:
     edit_button: "Edit course settings"
     destroy_button: "Destroy course"
+    create_text: "Create new course"
+    confirmation: "Are you sure?"
+    edit_text: "Edit course"
