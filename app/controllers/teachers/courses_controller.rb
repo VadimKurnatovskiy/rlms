@@ -33,8 +33,10 @@ module Teachers
     end
 
     def destroy
-      course.destroy
-      redirect_to teachers_courses_path
+      if course.topics.empty?
+        course.destroy
+        redirect_to teachers_courses_path
+      end
     end
 
     private
