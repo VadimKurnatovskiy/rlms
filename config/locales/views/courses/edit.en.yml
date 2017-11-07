@@ -1,3 +1,4 @@
 en:
   course:
     edit_button: "Edit course settings"
+    destroy_button: "Destroy course"

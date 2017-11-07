@@ -1,3 +1,4 @@
 ru:
   course:
     edit_button: "Изменить настройки курса"
+    destroy_button: "Удалить курс"
