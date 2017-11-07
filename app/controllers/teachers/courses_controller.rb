@@ -32,6 +32,11 @@ module Teachers
       respond_with :teachers, course
     end
 
+    def destroy
+      course.destroy
+      redirect_to teachers_courses_path
+    end
+
     private
 
     def course_params
