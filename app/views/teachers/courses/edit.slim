@@ -5,4 +5,5 @@
     = render "form"
     p
     - if course.topics.empty?
-    .text-center  = link_to 'Destroy course', teachers_course_path(course), class: "btn btn-danger", data: { confirm: 'Are you sure?' }, method: :delete
+      .text-center  
+        = link_to 'Destroy Course', teachers_course_path(course), class: "btn btn-danger", data: { confirm: 'Are you sure?' }, method: :delete
