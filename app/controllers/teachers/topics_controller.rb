@@ -26,7 +26,9 @@ module Teachers
     end
 
     def destroy
-      topic.destroy
+      result = RemoveTopic.call(topic: topic)
+
+      flash[:alert] = result.message unless result.success?
 
       respond_with :teachers, topic.course
     end
