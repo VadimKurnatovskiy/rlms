@@ -9,8 +9,8 @@ en:
   helpers:
     submit:
       course:
-        create: "Create course"
-        update: "Update"
+        create: "Create Course"
+        update: "Update Course"
   course:
     edit_button: "Edit course settings"
     destroy_button: "Destroy course"
