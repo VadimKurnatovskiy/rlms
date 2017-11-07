@@ -2,7 +2,7 @@ module Teachers
   module Topics
     class RemoveTopic
       include Interactor
-      delegete :topic, to: :context
+      delegate :topic, to: :context
 
       def call
         if author_of_course? && have_content?

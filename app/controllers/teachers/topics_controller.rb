@@ -2,7 +2,7 @@ module Teachers
   class TopicsController < BaseController
     respond_to :html
 
-    TOPIC_PARAMS = %i[title slug order_index]
+    TOPIC_PARAMS = %i[title slug order_index published]
 
     expose :course, find_by: :slug, id: :course_slug
     expose :topic
@@ -26,7 +26,7 @@ module Teachers
     end
 
     def destroy
-      result = RemoveTopic.call(topic: topic)
+      result = Topics::RemoveTopic.call(topic: topic)
 
       flash[:alert] = result.message unless result.success?
 
