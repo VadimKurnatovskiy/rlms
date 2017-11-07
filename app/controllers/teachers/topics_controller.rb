@@ -26,7 +26,7 @@ module Teachers
     end
 
     def destroy
-      result = Topics::RemoveTopic.call(topic: topic)
+      result = Topics::RemoveTopic.call(topic: topic, teacher: current_teacher)
 
       flash[:alert] = result.message unless result.success?
 

@@ -2,20 +2,22 @@ module Teachers
   module Topics
     class RemoveTopic
       include Interactor
-      delegate :topic, to: :context
+      delegate :topic, :teacher, to: :context
 
       def call
         if author_of_course? && have_content?
-          topic.destroy
+          topic.published = false
+          topic.save
+          context.fail!(message: "Тема скрыта, так как в теме есть материалы, вопросы или домашние задания")
         else
-          context.fail!(message: "Тема не может быть удалена")
+          topic.destroy
         end
       end
 
       private
 
       def author_of_course?
-        topic.course.teacher_id == current_teacher.id
+        topic.course.teacher == teacher
       end
 
       def have_content?
