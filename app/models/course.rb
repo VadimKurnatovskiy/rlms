@@ -14,6 +14,9 @@ class Course < ApplicationRecord
 
   scope :ordered_by_title, -> { order(title: :asc) }
 
+  scope :archived, -> { where(archived: true) }
+  scope :not_archived, -> { where(archived: false) }
+
   def to_param
     slug
   end

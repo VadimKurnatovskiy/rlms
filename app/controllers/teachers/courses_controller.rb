@@ -2,10 +2,11 @@ module Teachers
   class CoursesController < BaseController
     respond_to :html
 
-    COURSE_PARAMS = %i[title slug description published]
+    COURSE_PARAMS = %i[title slug description published archived]
 
     expose :course, find_by: :slug, id: :slug
     expose :courses, from: :current_teacher
+    expose(:courses) { archived? }
 
     def index
       respond_with courses
@@ -36,6 +37,16 @@ module Teachers
 
     def course_params
       params.require(:course).permit(*COURSE_PARAMS)
+    end
+    
+    def archived?
+      if params[:archived]== 'true'
+        puts 'archived'
+        return current_teacher.courses.archived
+      else
+        puts 'not_archived'
+        return current_teacher.courses.not_archived
+      end
     end
   end
 end

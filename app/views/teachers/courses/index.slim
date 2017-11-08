@@ -7,6 +7,12 @@
     .clearfix
     hr
 
+    - if params[:archived].present?
+      = link_to "Not archived", teachers_courses_path
+    - else
+      = link_to "Archived", teachers_courses_path(archived: true)
+
+
     h4 Published
     = render courses.published.ordered_by_title
 
