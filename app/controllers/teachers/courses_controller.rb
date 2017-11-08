@@ -41,10 +41,8 @@ module Teachers
     
     def archived?
       if params[:archived]== 'true'
-        puts 'archived'
         return current_teacher.courses.archived
       else
-        puts 'not_archived'
         return current_teacher.courses.not_archived
       end
     end
