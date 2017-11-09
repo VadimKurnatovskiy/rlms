@@ -20,6 +20,13 @@ module Teachers
       respond_with :teachers, course
     end
 
+    def destroy
+      if course.topics.empty?
+        course.destroy
+      end
+      redirect_to teachers_courses_path
+    end
+
     def show
       respond_with course
     end
