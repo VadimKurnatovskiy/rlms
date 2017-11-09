@@ -21,7 +21,7 @@ module Teachers
     end
 
     def destroy
-      if course.topics.empty?
+      if course.topics.empty? && course.teacher.eql?(current_teacher)
         course.destroy
       end
       redirect_to teachers_courses_path
