@@ -3,3 +3,7 @@
     h3 Edit course
     hr
     = render "form"
+    p
+    - if course.topics.empty?
+      .text-center
+        = link_to "Destroy", teachers_course_path(course), class: "btn btn-danger", data: { confirm: 'Are you sure?' }, method: :delete
