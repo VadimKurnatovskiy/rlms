@@ -2,3 +2,10 @@
   .col-md-8.col-md-offset-2
     h3 Welcome, #{current_teacher.full_name}!
     hr
+    h4 Published courses: #{courses.published.count}
+    h4 Not published courses: #{courses.not_published.count}
+    h4 Courses
+    - courses.each do |course| 
+      h5 #{course.title} students: #{course.learners.count}
+    h4 
+      | Total students: #{@total_students}
