@@ -4,4 +4,9 @@ li.list-group-item.material-container data-material-id=material.id
   .material-actions.pull-right
     h4 = link_to teachers_material_path(material), method: :delete, data: { remote: true, confirm: "Удалить материал и загруженный файл?" } do
       span.glyphicon.glyphicon-remove
+  .video.mar-top
+  	- if material.video 
+  	  = label_tag(material.video.title)
+  	  .video-block
+  	    iframe src="#{src(material.video.link, get_id(material.video.link))}" width="500" height="300" frameborder="0" webkitallowfullscreen allowfullscreen 
   .clearfix

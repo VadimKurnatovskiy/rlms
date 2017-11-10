@@ -7,11 +7,19 @@
   .panel.panel-default
     .panel-heading Загрузить материал:
     .panel-body
+
       = simple_form_for [:teachers, topic, topic.materials.new], remote: true do |f|
         .row
           .col-sm-6
             = f.input :title
           .col-sm-6
-            = f.input :attachment, as: :file
+            = f.input :attachment, as: :file 
+        .video_fields
+          .row
+            = f.fields_for topic.materials.new.build_video do |fv|
+              .col-sm-6
+                = fv.input :title, label: "Video title"
+              .col-sm-6
+                = fv.input :link, label: "Video link (YouTube or Vimeo only)"
         .clearfix
           .text-center = f.submit "Загрузить материал", class: "btn btn-default"
