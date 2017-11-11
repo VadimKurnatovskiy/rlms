@@ -26,12 +26,14 @@ Rails.application.routes.draw do
         end
         resources :materials, shallow: true, only: %i(create destroy)
       end
+      resources :news_items
     end
   end
 
   namespace :learners do
     resource :dashboard, only: :show
-
+    get 'news', action: :index, controller: 'news_items'
+    resources :news_items, except: :index
     resources :available_courses, only: :index
     resources :course_participations, only: %i(create destroy)
     resources :courses, param: :slug, only: %i(index show)

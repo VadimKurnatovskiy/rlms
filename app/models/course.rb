@@ -2,7 +2,7 @@ class Course < ApplicationRecord
   belongs_to :teacher
 
   has_many :topics, dependent: :destroy
-
+  has_many :news_items, dependent: :destroy
   has_many :course_participations
   has_many :learners, through: :course_participations
 

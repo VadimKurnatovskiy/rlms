@@ -1,0 +1,6 @@
+= simple_form_for [:teachers, course, news_item] do |f|
+  = f.input :title, autofocus: true
+  = f.input :body
+  = f.hidden_field :course_id, :value => course.id
+
+  .text-center = f.submit class: "btn btn-default btn-lg"
