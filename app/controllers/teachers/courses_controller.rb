@@ -21,9 +21,8 @@ module Teachers
     end
 
     def destroy
-      if course.topics.empty? && course.teacher.eql?(current_teacher)
-        course.destroy
-      end
+      authorize course
+      course.destroy
       redirect_to teachers_courses_path
     end
 
@@ -39,10 +38,16 @@ module Teachers
       respond_with :teachers, course
     end
 
+    
+
     private
 
     def course_params
       params.require(:course).permit(*COURSE_PARAMS)
+    end
+
+    def pundit_user
+      current_teacher
     end
   end
 end
