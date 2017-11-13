@@ -15,6 +15,7 @@ gem "rails_admin", "~> 1.2"
 gem "webpacker"
 gem "interactor", "~> 3.0"
 gem "active_model_serializers", "~> 0.10.0"
+gem "pundit"
 
 # services
 gem "rollbar"

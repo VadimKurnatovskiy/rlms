@@ -188,6 +188,8 @@ GEM
     pg (0.21.0)
     powerpack (0.1.1)
     public_suffix (2.0.5)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (2.0.3)
     rack-pjax (1.0.0)
       nokogiri (~> 1.5)
@@ -349,6 +351,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   pg (~> 0.18)
+  pundit
   rails (~> 5.1.2)
   rails_admin (~> 1.2)
   rollbar
@@ -366,4 +369,4 @@ RUBY VERSION
    ruby 2.3.4p301
 
 BUNDLED WITH
-   1.15.4
+   1.16.0
