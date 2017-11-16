@@ -5,7 +5,7 @@
 
   = puts course
   h4
-    - if course.archived == true
-      = link_to 'To unarchive', teachers_course_path(course, course: { archived: false } ), method: :puts
+    - if course.archived 
+      = link_to 'To unarchive', teachers_course_path(course, course: { archived: false } ), method: :put
     - else
       = link_to 'To archive', teachers_course_path(course, course: { archived: true } ), method: :put

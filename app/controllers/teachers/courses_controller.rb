@@ -5,8 +5,7 @@ module Teachers
     COURSE_PARAMS = %i[title slug description published archived]
 
     expose :course, find_by: :slug, id: :slug
-    expose :courses, from: :current_teacher
-    expose(:courses) { archived? }
+    expose(:courses) { fetch_courses }
 
     def index
       respond_with courses
@@ -39,12 +38,8 @@ module Teachers
       params.require(:course).permit(*COURSE_PARAMS)
     end
     
-    def archived?
-      if params[:archived]== 'true'
-        return current_teacher.courses.archived
-      else
-        return current_teacher.courses.not_archived
+    def fetch_courses
+      params[:archived]== 'true' ? current_teacher.courses.archived : current_teacher.courses.not_archived
       end
     end
   end
-end
