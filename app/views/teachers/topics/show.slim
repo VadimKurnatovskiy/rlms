@@ -2,6 +2,8 @@
   .col-md-8.col-md-offset-2
     h2 = topic.course.title
     h3 = "Тема: #{topic.title}"
+    - if !topic.published
+      h5 = "* Скрыто"
     hr
 
     ul.nav.nav-tabs role="tablist"

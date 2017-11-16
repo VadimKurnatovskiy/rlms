@@ -10,6 +10,12 @@ ru:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Проверьте правильность:"
+    labels:
+      course:
+        title: "Название"
+        slug: "Уникальное имя"
+        description: "Описание"
+        published: "Опубликовать"
     # Examples
     # labels:
     #   defaults:
@@ -40,3 +46,6 @@ ru:
       topic:
         create: "Добавить тему"
         update: "Сохранить изменения"
+      course:
+        create: "Создать Курс"
+        update: "Обновить Курс"
