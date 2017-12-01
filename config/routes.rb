@@ -32,8 +32,7 @@ Rails.application.routes.draw do
 
   namespace :learners do
     resource :dashboard, only: :show
-    resources :news, only: :index, controller: "news_items"
-    resources :news_items, except: :index
+    resources :news, only: [:index, :show], controller: "news_items"
     resources :available_courses, only: :index
     resources :course_participations, only: %i(create destroy)
     resources :courses, param: :slug, only: %i(index show)

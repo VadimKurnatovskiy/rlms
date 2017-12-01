@@ -1,5 +1,6 @@
 .well
   h4 = link_to course.title, [:teachers, course]
+  .pull-right
+    = link_to t("course.news_index_button"), teachers_course_news_items_path(course), class: "btn btn-default btn-sm"
   p = course.description
   strong Темы: #{course.topics.count}
-

@@ -2,6 +2,7 @@
   .col-md-8.col-md-offset-2
     h3 = news_item.title
     hr
-    p = news_item.body
-    p = news_item.created_at
+    h4 = news_item.body
     p = news_item.updated_at
+    = link_to 'Destroy',[:teachers, course, news_item], method: :delete, data: {confirm: 'Are you sure?'}
+    = link_to "Back", :back
