@@ -6,6 +6,8 @@ module Learners
 
     def create
       course_participation.save
+      CourseMailchimpListSubscriber.perform_async(current_learner,
+                                                  course_participation.course)
 
       redirect_back fallback_location: learner_root_path
     end
