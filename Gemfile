@@ -15,9 +15,12 @@ gem 'interactor', '~> 3.0'
 gem 'pg', '~> 0.18'
 gem 'rails_admin', '~> 1.2'
 gem 'webpacker'
+gem 'sidekiq'
+gem 'whenever', require: false
 
 # services
 gem 'rollbar'
+gem 'gibbon'
 
 # auth
 gem 'devise'
