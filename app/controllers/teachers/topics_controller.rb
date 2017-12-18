@@ -12,7 +12,11 @@ module Teachers
     def create
       result = Topics::Build.call(topic: topic, course: course)
 
-      flash[:alert] = result.message unless result.success?
+      if result.success?
+        CourseUpdateNotifier.perform_async(topic)
+      else
+        flash[:alert] = result.message
+      end
 
       respond_with :teachers, course
     end
