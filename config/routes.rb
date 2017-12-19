@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :courses, only: [] do
-        resources :topics, shallow: true, only: %w(index show update)
+        resources :topics, param: :slug, shallow: true, only: %w(index show update)
       end
     end
   end
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :materials, only: %i(create destroy)
 
     resources :courses, param: :slug do
-      resources :topics, shallow: true, except: :index do
+      resources :topics, param: :slug, shallow: true, except: :index do
         resources :tasks, only: %w(create destroy)
         resources :questions, shallow: true, only: %i(create update destroy) do
           resources :answer_variants, shallow: true, only: %i(create destroy)
@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     resources :available_courses, only: :index
     resources :course_participations, only: %i(create destroy)
     resources :courses, param: :slug, only: %i(index show)
-    resources :topics, only: :show
+    resources :topics, param: :slug, only: :show
   end
 
   authenticated :administrator do
