@@ -13,13 +13,13 @@
           .col-sm-6
             = f.input :title
           .col-sm-6
-            = f.input :attachment, as: :file 
+            = f.input :attachment, as: :file
         .video_fields
           .row
-            = f.fields_for topic.materials.new.build_video do |fv|
+            = f.simple_fields_for f.object.build_video do |v|
               .col-sm-6
-                = fv.input :title, label: "Video title"
+                = v.input :title, label: "Video title"
               .col-sm-6
-                = fv.input :link, label: "Video link (YouTube or Vimeo only)"
+                = v.input :link, label: "Video link (YouTube or Vimeo only)"
         .clearfix
           .text-center = f.submit "Загрузить материал", class: "btn btn-default"

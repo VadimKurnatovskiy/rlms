@@ -8,12 +8,7 @@ module Teachers
     def create
       material.topic = topic
       material.save
-      video_params = params[:material][:video]
-      unless video_params[:link].empty?
-        video = material.build_video(title: video_params[:title],
-                                     link: video_params[:link])
-        video.save!
-      end
+      save_video
     end
 
     def destroy
@@ -22,10 +17,17 @@ module Teachers
 
     private
 
-    def material_params
-      params.require(:material)
-      .permit(:title, :attachment, video_params: [:title, :link])
+    def save_video
+      video_params = params[:material][:video]
+      return if video_params[:link].empty?
+      video = material.build_video(title: video_params[:title],
+                                   link: video_params[:link])
+      video.save!
     end
 
+    def material_params
+      params.require(:material)
+            .permit(:title, :attachment, video_attributes: %i[title link])
+    end
   end
 end
