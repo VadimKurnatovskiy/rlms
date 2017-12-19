@@ -1,7 +1,9 @@
 module Mailchimp
   module Companies
     class NotifyCourseUpdate
-      delegate :topic
+      include Interactor
+      include Mailchimp::Base
+      delegate :topic, to: :context
 
       def call
         notify
