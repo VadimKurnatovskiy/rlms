@@ -1,0 +1,5 @@
+{
+  "application.js": "/packs-test/application.js",
+  "components/SortableTopicsComponent.js": "/packs-test/components/SortableTopicsComponent.js",
+  "course.js": "/packs-test/course.js"
+}

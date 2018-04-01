@@ -6,7 +6,6 @@ module Teachers
 
       def call
         if author_of_course? && have_content?
-          topic.published = false
           topic.save
           context.fail!(message: "Тема скрыта, так как в теме есть материалы, вопросы или домашние задания")
         else
