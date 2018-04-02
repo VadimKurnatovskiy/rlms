@@ -1,5 +1,0 @@
-current directory: /home/vadim/src/ruby/rlms/.bundle/ruby/2.4.0/gems/rainbow-2.2.2/ext
-/home/vadim/.rbenv/versions/2.4.2/bin/ruby mkrf_conf.rb
-
-current directory: /home/vadim/src/ruby/rlms/.bundle/ruby/2.4.0/gems/rainbow-2.2.2/ext
-/home/vadim/.rbenv/versions/2.4.2/bin/ruby -rubygems /home/vadim/src/ruby/rlms/.bundle/ruby/2.4.0/gems/rake-12.0.0/exe/rake RUBYARCHDIR=/home/vadim/src/ruby/rlms/.bundle/ruby/2.4.0/extensions/x86_64-linux/2.4.0-static/rainbow-2.2.2 RUBYLIBDIR=/home/vadim/src/ruby/rlms/.bundle/ruby/2.4.0/extensions/x86_64-linux/2.4.0-static/rainbow-2.2.2
