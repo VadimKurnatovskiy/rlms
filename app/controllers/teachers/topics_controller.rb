@@ -5,7 +5,7 @@ module Teachers
     TOPIC_PARAMS = %i[title slug order_index]
 
     expose :course, find_by: :slug, id: :course_slug
-    expose :topic
+    expose :topic, find_by: :slug, id: :slug
 
     def show; end
 

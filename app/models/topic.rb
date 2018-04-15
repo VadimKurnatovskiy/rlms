@@ -13,4 +13,8 @@ class Topic < ApplicationRecord
   def materials_count
     materials.count
   end
+
+  def to_param
+    slug
+  end
 end

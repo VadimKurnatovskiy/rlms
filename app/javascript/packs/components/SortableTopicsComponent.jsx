@@ -48,12 +48,12 @@ const CourseTopic = SortableElement(({topic}) => {
     <div className="topicContainer sortableElement well">
       <div className="topicTitle pull-left">
         <h4>
-          <a href={`/teachers/topics/${topic.id}`}>{topic.title}</a>
+          <a href={`/teachers/topics/${topic.slug}`}>{topic.title}</a>
         </h4>
       </div>
       <div className="topicActions pull-right">
         <h4>
-          <a href={`/teachers/topics/${topic.id}/edit`}>
+          <a href={`/teachers/topics/${topic.slug}/edit`}>
             <span className='glyphicon glyphicon-pencil'></span>
           </a>
         </h4>
@@ -63,4 +63,3 @@ const CourseTopic = SortableElement(({topic}) => {
     </div>
   )
 })
-
