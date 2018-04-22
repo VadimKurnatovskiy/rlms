@@ -11,3 +11,5 @@ rerun.txt
 pickle-email-*.html
 /node_modules
 .bundle
+/public
+.env

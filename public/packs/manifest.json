@@ -1,5 +1,0 @@
-{
-  "application.js": "http://lvh.me:8080/packs/application.js",
-  "components/SortableTopicsComponent.js": "http://lvh.me:8080/packs/components/SortableTopicsComponent.js",
-  "course.js": "http://lvh.me:8080/packs/course.js"
-}
