@@ -1,10 +1,12 @@
 class ApplicationController < ActionController::Base
+
+  include Pundit
   protect_from_forgery with: :exception
 
   helper_method :anyone_signed_in?
 
   before_action :configure_permitted_parameters, if: :devise_controller?
-  
+
   before_action :set_user_locale
 
   AVAILABLE_LOCALES = %w(en ru).freeze
@@ -27,7 +29,7 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-  
+
   def extract_language_from_request
     language_data = request.env["HTTP_ACCEPT_LANGUAGE"]
 
