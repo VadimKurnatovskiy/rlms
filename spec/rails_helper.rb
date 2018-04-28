@@ -19,6 +19,17 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
 end
 
+Capybara.javascript_driver = :webkit
+
+Capybara::Webkit.configure do |config|
+  config.allow_url("fonts.gstatic.com")
+end
+
+Capybara::Webkit.configure do |config|
+  config.allow_url("http://localhost:5000/teachers/topics/slug1")
+end
+
+
 SimpleCov.start "rails" do
   add_filter "/.bundle"
 

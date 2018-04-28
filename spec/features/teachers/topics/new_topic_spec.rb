@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Teacher creates new topic" do
+feature "Teacher creates new topic", :js => true do
   include_context "teacher signed in"
 
   let(:course_attributes) { attributes_for(:course) }
@@ -24,6 +24,7 @@ feature "Teacher creates new topic" do
     fill_in :topic_slug, with: "slug1"
     click_button "Add topic"
     visit '/teachers/topics/slug1'
+    #click_on "qwerty"
 
     expect(page).to have_content "Материалы"
   end

@@ -70,6 +70,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.15.0)
+      capybara (>= 2.3, < 4.0)
+      json
     carrierwave (1.1.0)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
@@ -337,6 +340,7 @@ DEPENDENCIES
   bootswatch-rails
   byebug
   capybara
+  capybara-webkit
   carrierwave (~> 1.0)
   database_cleaner
   decent_exposure

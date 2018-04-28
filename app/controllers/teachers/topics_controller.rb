@@ -26,10 +26,8 @@ module Teachers
     end
 
     def destroy
-      result = Topics::RemoveTopic.call(topic: topic, teacher: current_teacher)
-
-      flash[:alert] = result.message unless result.success?
-
+      authorize topic
+      topic.destroy
       respond_with :teachers, topic.course
     end
 
@@ -37,6 +35,10 @@ module Teachers
 
     def topic_params
       params.require(:topic).permit(*TOPIC_PARAMS)
+    end
+
+    def pundit_user
+      current_teacher
     end
   end
 end
